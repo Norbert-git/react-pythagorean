@@ -8,15 +8,15 @@ const calculate = () => {
   const c = parseFloat(document.getElementById("c").value)
 
   if (Number.isNaN(a) && !Number.isNaN(b) && !Number.isNaN(c)) {
-    answer = Math.sqrt(c ** 2 - b ** 2).toFixed(3)
+    answer = Math.sqrt(c ** 2 - b ** 2).toFixed(2)
   }
 
   if (Number.isNaN(b) && !Number.isNaN(a) && !Number.isNaN(c)) {
-    answer = Math.sqrt(c ** 2 - a ** 2).toFixed(3)
+    answer = Math.sqrt(c ** 2 - a ** 2).toFixed(2)
   }
 
   if (Number.isNaN(c) && !Number.isNaN(a) && !Number.isNaN(b)) {
-    answer = Math.sqrt(a ** 2 + b ** 2).toFixed(3)
+    answer = Math.sqrt(a ** 2 + b ** 2).toFixed(2)
   }
 
   Pythagorean()
