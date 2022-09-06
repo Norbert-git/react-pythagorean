@@ -8,15 +8,15 @@ const calculate = () => {
   const c = parseFloat(document.getElementById("c").value)
 
   if (Number.isNaN(a) && !Number.isNaN(b) && !Number.isNaN(c)) {
-    answer = Math.sqrt(c ** 2 - b ** 2)
+    answer = Math.sqrt(c ** 2 - b ** 2).toFixed(3)
   }
 
   if (Number.isNaN(b) && !Number.isNaN(a) && !Number.isNaN(c)) {
-    answer = Math.sqrt(c ** 2 - a ** 2)
+    answer = Math.sqrt(c ** 2 - a ** 2).toFixed(3)
   }
 
   if (Number.isNaN(c) && !Number.isNaN(a) && !Number.isNaN(b)) {
-    answer = Math.sqrt(a ** 2 + b ** 2)
+    answer = Math.sqrt(a ** 2 + b ** 2).toFixed(3)
   }
 
   Pythagorean()
@@ -26,15 +26,34 @@ const app = document.getElementById("root")
 
 const Pythagorean = () => {
   const template = (
-    <div>
+    <div className="container">
       <form>
-        <input type="text" placeholder="type in A" id="a"></input>
-        <input type="text" placeholder="type in B" id="b"></input>
-        <input type="text" placeholder="type in C" id="c"></input>
-        <button type="button" onClick={calculate}>
+        <input
+          className="field1"
+          type="text"
+          placeholder="Type in A"
+          id="a"
+        ></input>
+        <br></br>
+        <input
+          className="fields"
+          type="text"
+          placeholder="Type in B"
+          id="b"
+        ></input>
+        <br></br>
+        <input
+          className="fields"
+          type="text"
+          placeholder="Type in C"
+          id="c"
+        ></input>
+        <br></br>
+        <button className="button" type="button" onClick={calculate}>
           Calculate
         </button>
-        <h2>The answer is : {answer}</h2>
+        <h2>The answer is :</h2>
+        <h1 className="number">{answer}</h1>
       </form>
     </div>
   )
